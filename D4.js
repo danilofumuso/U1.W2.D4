@@ -105,7 +105,20 @@ console.log(reverseString("EPICODE"));
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
-function upperFirst(a) {}
+function upperFirst(a) {
+  const words = a.split(" ");
+  const wordsCapitalized = [];
+  for (let i = 0; i < words.length; i++) {
+    const firstLetter = words[i].charAt(0).toUpperCase();
+    const remainingLetters = words[i].slice(1);
+    const completeWord = firstLetter + remainingLetters;
+    wordsCapitalized.push(completeWord);
+  }
+  console.log(wordsCapitalized);
+  let completeSentence = wordsCapitalized.join(" ");
+  return completeSentence;
+}
+console.log(upperFirst("mi piace la pizza"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. 
